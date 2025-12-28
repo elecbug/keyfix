@@ -1,3 +1,3 @@
-# Irregular
+# Keyfix
 
-Heuristic handling of various irregulars.
+Keyboard layout–based typo recovery between Korean and English input

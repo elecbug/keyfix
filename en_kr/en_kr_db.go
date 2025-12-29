@@ -1,4 +1,7 @@
-package kr
+package en_kr
+
+const KR_START = '가'
+const KR_END = '힣'
 
 // Mapping tables for compatibility Jamo to standard Jamo conversion.
 var compatToCho = map[rune]rune{

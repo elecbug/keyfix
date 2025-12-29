@@ -1,9 +1,9 @@
-package kr_test
+package en_kr_test
 
 import (
 	"testing"
 
-	. "github.com/elecbug/keyfix/en-kr"
+	. "github.com/elecbug/keyfix/en_kr"
 )
 
 func TestEnToKr(t *testing.T) {
@@ -19,6 +19,10 @@ func TestEnToKr(t *testing.T) {
 		{"gksrmfrhk duddj qusghks xptmxm", "한글과 영어 변환 테스트", false},
 		{"TNTWKEH EHLFrK? 12345!", "숫자도 될까? 12345!", true},
 		{"RnpfqEnfgthofgfpg", "꿻뚫쇓렣", false},
+
+		{"Hello, World!", "ㅗ디ㅣㅐ, 째깅!", false},
+		{"HELLO, WORLD!", "ㅗ디ㅣㅐ, 재깅!", true},
+		{"Hello, my name is Test.", "ㅗ디ㅣㅐ, ㅡㅛ ㅜ믇 ㅑㄴ ㅆㄷㄴㅅ.", false},
 	}
 
 	for _, test := range tests {
@@ -46,6 +50,10 @@ func TestKrToEn(t *testing.T) {
 		{"한글과 영어 변환 테스트", "gksrmfrhk duddj qusghks xptmxm", false},
 		{"숫자도 될까? 12345!", "tntwkeh ehlfRk? 12345!", false},
 		{"꿻뚫쇓렣", "rNPFQeNFGTHOFGFPG", true},
+
+		{"ㅗ디ㅣㅐ, 째깅!", "hello, World!", false},
+		{"ㅗ디ㅣㅐ, 재깅!", "HELLO, WORLD!", true},
+		{"ㅗ디ㅣㅐ, ㅡㅛ ㅜ믇 ㅑㄴ ㅆㄷㄴㅅ.", "hello, my name is Test.", false},
 	}
 
 	for _, test := range tests {

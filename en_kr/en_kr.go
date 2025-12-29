@@ -1,4 +1,4 @@
-package kr
+package en_kr
 
 import (
 	"fmt"
@@ -49,7 +49,7 @@ func (r *RawTypo) Convert() (string, error) {
 		result := ""
 
 		for _, ch := range raw {
-			if unicode.Is(unicode.Hangul, ch) {
+			if KR_START <= ch && ch <= KR_END {
 				start, mid, end, err := getKrComponents(ch)
 
 				if err != nil {

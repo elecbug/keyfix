@@ -7,6 +7,12 @@ keylayout은 사용자가 의도한 언어가 아닌,
 잘못된 키보드 레이아웃(QWERTY ↔ 두벌식) 상태에서 입력된 문자열을 분석하여
 올바른 텍스트로 변환합니다.
 
+## 다운로드
+
+```sh
+go get github.com/elecbug/keyfix@latest
+```
+
 ## 주요 기능
 
 - 영문 키보드로 잘못 입력된 한글 문장 복구
@@ -20,7 +26,7 @@ keylayout은 사용자가 의도한 언어가 아닌,
 ### 영문 → 한글 (키보드 레이아웃 오입력)
 
 ```go
-typo := kr.NewRawTypo("dkssudgktpdy", false)
+typo := en_kr.NewRawTypo("dkssudgktpdy", false)
 result, _ := typo.Convert()
 
 fmt.Println(result)
@@ -30,7 +36,7 @@ fmt.Println(result)
 ### 한글 → 영문 (역 전환)
 
 ```go
-typo := kr.NewRawTypo("안녕하세요", false)
+typo := en_kr.NewRawTypo("안녕하세요", false)
 result, _ := typo.Convert()
 
 fmt.Println(result)
@@ -40,7 +46,7 @@ fmt.Println(result)
 ### 숫자 및 특수문자 보존 
 
 ```go
-typo := kr.NewRawTypo("dkssudgktpdy123!!", false)
+typo := en_kr.NewRawTypo("dkssudgktpdy123!!", false)
 result, _ := typo.Convert()
 
 fmt.Println(result)
